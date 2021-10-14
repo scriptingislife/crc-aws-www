@@ -1,0 +1,11 @@
+name: refresh-website
+on: [push]
+jobs:
+  refresh-s3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh S3 and CloudFront
+        run: aws s3 sync ./www s3://crc-aws-www && aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DISTRIBUTION_ID }} --paths "/*"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'us-east-1'
