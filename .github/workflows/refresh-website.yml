@@ -4,6 +4,7 @@ jobs:
   refresh-s3:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Refresh S3 and CloudFront
         run: aws s3 sync ./www s3://crc-aws-www && aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DISTRIBUTION_ID }} --paths "/*"
         env:
