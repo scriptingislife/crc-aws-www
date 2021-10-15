@@ -13,6 +13,9 @@
   <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/favicon.ico" rel="apple-touch-icon">
 
+  <!-- Visitor Counter -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -178,6 +181,7 @@
           </div>
         </div>
         <div class="col-sm-6 social text-md-end">
+          <p class="mb-1" id="visitors"></p>
           <a href="https://twitter.com/scriptingislife"><span class="bi bi-twitter"></span></a>
           <a href="https://www.linkedin.com/in/nathaniel-beckstead/"><span class="bi bi-linkedin"></span></a>
         </div>
@@ -196,6 +200,10 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/visitors.js"></script>
+  <script type="text/javascript">
+    window.onload = getVisitors;
+  </script>
 
 </body>
 
